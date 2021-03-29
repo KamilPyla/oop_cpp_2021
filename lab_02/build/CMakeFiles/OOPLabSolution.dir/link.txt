@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -Wall -g  -shared -Wl,-soname,libOOPLabSolution.so -o libOOPLabSolution.so CMakeFiles/OOPLabSolution.dir/Suma.cpp.o CMakeFiles/OOPLabSolution.dir/Argumenty.cpp.o CMakeFiles/OOPLabSolution.dir/Pierwiastek.cpp.o 

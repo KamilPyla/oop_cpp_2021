@@ -1,0 +1,4 @@
+/home/alfakp/C++/Lab2021/lab_02/build/CMakeFiles/rebuild_cache.dir
+/home/alfakp/C++/Lab2021/lab_02/build/CMakeFiles/edit_cache.dir
+/home/alfakp/C++/Lab2021/lab_02/build/CMakeFiles/OOPLabExe.dir
+/home/alfakp/C++/Lab2021/lab_02/build/CMakeFiles/OOPLabSolution.dir
