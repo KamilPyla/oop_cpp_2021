@@ -1,22 +1,30 @@
-#pragma once 
+#pragma once
+#include <iostream>
 #include "File.h"
 #include <vector>
+
 using namespace std;
-class  Dir final : public File {
-   
-  public:
 
-  Dir(string n):File(n){}
+class Dir final: public File {
 
-  File *get(string n);
-  void operator += (File * f);
-  void add ( File * f);
-  Dir * findDir(string n) const;
-  ostream &print(ostream & out)const;
+    public:
 
-  ~Dir();
+    Dir(string n): File(n){}
 
-  private:
-    vector<File *> vec;
+    void operator +=(File * o);
+
+    ostream & print(ostream &out)const;
+
+    Dir* findDir(string n) const;
+
+    void add(File * o);
+
+    File* get(string n);
+
+    ~Dir();
+
+    private:
+
+        vector <File*> vec;
 
 };

@@ -1,4 +1,4 @@
-/*
+ /*
  * Celem zadania jest napisanie hierarchi klas opisujacej skladniki systemu plikow.
  * Skladnikami tymi sa miedzy innymi katalog (klasa Dir) i plik (klasa File).
  * Nalezy przewidziec ze beda to jeszcze jakies inne obiekty. Np. Link?
