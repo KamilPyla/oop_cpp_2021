@@ -13,13 +13,13 @@ struct Policy {
 
 struct CachePolicy : Policy {
 
-		// zapamietuje warosc obliczenia dla argumentu
+	// zapamietuje warosc obliczenia dla argumentu
     virtual void cacheValueForArgument( double arg, double val ) const = 0; 
 
-		// zwraca true jesli w cachu znajduje sie wartosc dla argumentu
+	// zwraca true jesli w cachu znajduje sie wartosc dla argumentu
     virtual bool hasCacheFor( double arg ) const = 0;
 
-		// zapamietana wartosc dla argumentu
+	// zapamietana wartosc dla argumentu
     virtual double getCached(double arg) const = 0;
 
 		virtual string policyName() const {return "";}		
@@ -29,44 +29,43 @@ struct CachePolicy : Policy {
 struct NoCache: CachePolicy {
 
 
-		virtual void cacheValueForArgument( double arg, double val ) const {  } 
+	virtual void cacheValueForArgument( double arg, double val ) const {  } 
 
     virtual bool hasCacheFor( double arg ) const { return false; }
 
     virtual double getCached(double arg) const { return 0.0; }
 
-		virtual string policyName() const { return "NoCache"; }	
+	virtual string policyName() const { return "NoCache"; }	
 
 };
 
 
 struct OneCallCache: CachePolicy {
 
-
-		virtual void cacheValueForArgument( double arg, double val ) const { _cacheArg = arg; _cacheVal = val; }
-
+	virtual void cacheValueForArgument( double arg, double val ) const { _cacheArg = arg; _cacheVal = val; }
 
     virtual bool hasCacheFor( double arg ) const { return _cacheArg == arg;}  
 
     virtual double getCached(double arg) const {return _cacheVal;} 
 
-		virtual string policyName() const { return "OneCallCache"; }	
+	virtual string policyName() const { return "OneCallCache"; }	
 
-		// pole przechowujące wcześniejszy argument
-		mutable double _cacheArg = 0;
+	// pole przechowujące wcześniejszy argument
+	mutable double _cacheArg = 0;
 
-		// pole przechowujące wartość dla argumentu
-		mutable double _cacheVal = 0;
+	// pole przechowujące wartość dla argument
+	mutable double _cacheVal = 0;
 };
 
 
 struct VerbosityPolicy : Policy {
 
-		// wypisuje na stdout argument i wynik dzialania na tym argumencie
+	// wypisuje na stdout argument i wynik dzialania na tym argumencie
     virtual void printArgAndResult( double arg, double val) const = 0;
 
-		virtual string policyName() const {return "";}
+	virtual string policyName() const {return "";}
 };
+
 
 struct Silent: VerbosityPolicy {
 
