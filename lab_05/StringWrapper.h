@@ -21,7 +21,7 @@ class StringWrapper : public Wrapper {
 	}
 
 	~StringWrapper() {
-		delete _str;
+		delete [] _str;
 	}
 
 	private:
