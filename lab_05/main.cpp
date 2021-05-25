@@ -18,6 +18,8 @@
 #include "IntWrapper.h"
 #include "StringWrapper.h"
 
+/// TODO: RROR SUMMARY: 4 errors from 3 contexts (suppressed: 0 from 0)
+
 int main() {  
   PArr a(3); // 3 elementowa
   a[0] = new FloatWrapper(0.1);
@@ -43,6 +45,8 @@ int main() {
   PArr c(std::move(a));
   std::cout << "a " <<  (const PArr&)a << std::endl;			 
   std::cout << "c " << (const PArr&)c << std::endl;			 
+
+
   
   // UWAGA na potencjalny wyciek pamieci
 }

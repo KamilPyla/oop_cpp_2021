@@ -1,17 +1,24 @@
 #pragma once
-#include "Object.h"
+#include "PArr.h"
+#include <iostream>
 
+class FloatWrapper : public Wrapper {
 
-class FloatWrapper: public Object {
-  public:
+	public:
+	FloatWrapper(float num): _val(num){}
 
-    FloatWrapper(float f): Object("float"), val(f){}
+	Wrapper * cpyObject()const {
+		return new FloatWrapper(_val);
+	}
 
-    FloatWrapper * getVal() const override {return new FloatWrapper(val);};
+	virtual void print(std::ostream & out) const {
+		out << _val << " ";
+	}
 
-    void  print()const override {std::cout<<val;}
+	~FloatWrapper() = default;
 
-  private:
-    float val;
+	private:
+	
+	float _val;
 
 };

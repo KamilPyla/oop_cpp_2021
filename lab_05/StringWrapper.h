@@ -1,20 +1,31 @@
 #pragma once
-#include "Object.h"
+#include "PArr.h"
 #include <cstring>
-#include <iostream>
 
 
-class StringWrapper: public Object {
-  public:
-    StringWrapper(const char * s);
+class StringWrapper : public Wrapper {
 
-    StringWrapper * getVal() const override {return new StringWrapper(str);}
+	public:
+	StringWrapper(const char * str) {
+		_sizeStr = strlen(str) + 1;
+		_str = new char[_sizeStr];
+    strcpy(_str, str);
+	}
 
-    ~StringWrapper(){if (str) delete [] str;}
+	Wrapper * cpyObject()const {
+		return new StringWrapper(_str);
+	}
 
-    void print()const override {std::cout<<str;}
-    
-  private:
-    char * str;
-    int size;
+	virtual void print(std::ostream & out) const {
+		out << _str << " ";
+	}
+
+	~StringWrapper() {
+		delete _str;
+	}
+
+	private:
+	
+	char * _str;
+	int _sizeStr;
 };

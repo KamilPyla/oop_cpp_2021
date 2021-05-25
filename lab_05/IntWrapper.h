@@ -1,19 +1,24 @@
 #pragma once
-#include "Object.h"
-#include <string>
+#include "PArr.h"
 
+class IntWrapper : public Wrapper {
 
-class IntWrapper: public Object {
-  public:
-  IntWrapper(int i):Object("int"), val(i){}
+	public:
+	IntWrapper(int num): _val(num){}
 
-  IntWrapper * getVal()const override {return new IntWrapper(val);}
+	Wrapper * cpyObject()const {
+		return new IntWrapper(_val);
+	}
 
-  void  print()const override {std::cout<<"  " << val << "  ";}
+	virtual void print(std::ostream & out) const {
+		out << _val << " ";
+	}
 
+	~IntWrapper() = default;
 
-  private:
-
-  int val;
+	private:
+	
+	int _val;
 
 };
+
