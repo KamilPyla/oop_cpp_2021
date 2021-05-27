@@ -100,3 +100,15 @@
 
   }
 
+	std::ostream & operator << (std::ostream & o ,const MyString & s ){
+  if (s.size() > 0){
+
+    for (int i = 0; i < s.fragments(); i++){
+      o << s.fragment(i).str();
+    }
+    return o;
+  }
+  else 
+    return o;
+}
+
