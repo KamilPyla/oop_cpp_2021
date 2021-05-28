@@ -9,7 +9,7 @@ class StringWrapper : public Wrapper {
 	StringWrapper(const char * str) {
 		_sizeStr = strlen(str) + 1;
 		_str = new char[_sizeStr];
-    strcpy(_str, str);
+    	strcpy(_str, str);
 	}
 
 	Wrapper * cpyObject()const {

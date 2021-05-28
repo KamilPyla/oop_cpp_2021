@@ -18,13 +18,12 @@ class PArr {
 	PArr(int n): _size(n){
 		_tab = new Wrapper * [n]; 
 	}
-
-  ~PArr()
-  {
-      for (int i = 0; i < _size; ++i)
-        delete _tab[i];
-    delete [] _tab;
-  }
+  
+  	~PArr() {
+  	    for (int i = 0; i < _size; ++i)
+  	      delete _tab[i];
+  	  	delete [] _tab;
+  	}
 
 	PArr(const PArr & cpy):PArr(cpy._size) {
 		for (int i = 0; i < _size; i++){
@@ -66,8 +65,7 @@ class PArr {
 };
 
 std::ostream & operator << (std::ostream & out, const PArr & p) {
-	for (int i = 0; i < p._size; i++) {
+	for (int i = 0; i < p._size; i++)
 		p._tab[i]->print(out);
-	}
 	return out;
 }
