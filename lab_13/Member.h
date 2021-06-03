@@ -13,7 +13,7 @@ struct Member {
   int health() const { return m_health; }
   
 	bool operator < (const Member & m) const {
-		return m_name.compare(m.m_name);
+		return m_name < m.m_name;
 	}
 
   std::string m_name;

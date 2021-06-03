@@ -31,7 +31,6 @@ int main() {
   std::cout << "--\n";
   Team super_team = t1 + t2;
   std::cout << super_team;
-  std::cout << "--\n";
   super_team.kill( [](const Member&  m){ return m.magic() <= 2; } );
   std::cout << "--\n";
   std::cout << super_team;
